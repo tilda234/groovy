@@ -6,7 +6,7 @@ pipeline {
 				label "master"
             }
 			steps {
-				git 'git@github.com:venkat09docs/batch10.git'
+				git 'git@github.com:ykrajuaws1993/groovy.git'
 				withEnv(["PATH+MAVEN=${tool 'M3'}/bin"]) {
 					sh "mvn clean package"		  
 				}
