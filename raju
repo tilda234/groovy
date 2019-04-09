@@ -1,3 +1,17 @@
 1) How do you monitor the healthiness of on board units ?
+
+
+
+
+
+
+
 2) How do you determine if a production server can have a downtime ?
+
+Answer : Blue-green deployment is a technique that reduces downtime and risk by running two identical production environments called Blue and Green
+
+
+
+
+
 3) What doo you need to do to keep the services and servers alive
