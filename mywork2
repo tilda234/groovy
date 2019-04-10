@@ -1,0 +1,17 @@
+import boto3
+import json
+import requests
+
+client = boto3.client('es')
+
+team_data = requests.get('http://yellowpages.prod.lulu.com/api/team').json()
+
+service_data = requests.get('http://yellowpages.prod.lulu.com/api/service').json()
+
+es_domains = client.list_domain_names()
+
+for es_domain in es_domains['DomainNames']:
+    response = client.describe_elasticsearch_domain(DomainName=es_domain['DomainName'])
+    tags = client.list_tags(ARN=response['DomainStatus']['ARN'])
+    print(tags) 
+ 
